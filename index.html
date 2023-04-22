@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">News</h1>
+        <div class="header__list">
+            <h2>submit</h2>
+            <h2>new</h2>
+            <h2>comments</h2>
+            <h2>login</h2>
+        </div>
+    </header>
+    <main class="main">
+        <ul class="main__list">
+
+        </ul>
+    </main>
+    <footer class="footer">
+        <p>copyright</p>
+        <p>Sign up to our newsletter</p>
+        <p>FAQ</p>
+
+    </footer>
+    <template id="NewsList" class="main__news-list">
+        <li id="NewsItem" class="main__list-item">
+            <a class="main__list-item-title" href="link">Title</a>
+            <p class="main__list-item-author">Author</p>
+            <button class="comments__button">
+                <a href="./components/comments/comment.html" class="comments__link">Comments</a>
+            </button>
+        </li>
+    </template>
+    <script src="src/scripts/index.js"></script>
+    <script type="module" src="./src/utils/API.js"></script>
+    <script type="module" src="./src/utils/config.js"></script>
+
+</body>
+
+</html>

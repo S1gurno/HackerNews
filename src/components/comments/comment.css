@@ -1,0 +1,46 @@
+body{
+    background-color: #f5ebe0;
+    height: 90vh;
+}
+.comments__list{
+    /* border: black 1px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.comment__text{
+    /* border: red 1px solid; */
+    font-size: 24px;
+}
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    /* border: blue 1px solid; */
+    background-color: #e3d5ca;
+    padding: 20px 50px;
+    border-radius: 25px;
+    width: 90%;
+    margin: 10px auto;
+}
+.comments:hover{
+    border: black 1px solid;
+}
+.comments__title{
+    font-size: 64px;
+    font-weight: bolder;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.news__url{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.margin_left{
+    margin-left: 20px;
+}

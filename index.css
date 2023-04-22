@@ -1,0 +1,103 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    width: 100%;
+    grid-template-rows: 100px 1fr 200px;
+    background-color: #d6ccc2;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header__list {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__list-item {
+    border: 1px black solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px red solid; */
+
+}
+
+.main__list {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+.main__list-item-title {
+    color: black;
+    margin: 3px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.main__list-item-author {
+    font-size: 18px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #d6ccc2;
+    font-size: 14px;
+    color: #d4a373;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .title {
+        font-size: 34px;
+    }
+
+    .header__list {
+        width: 50%;
+        font-size: 18px;
+    }
+
+    .footer {
+        font-size: 28px;
+        flex-direction: column;
+    }
+}
+
+/* https://coolors.co/palettes/trending/pastel */
