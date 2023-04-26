@@ -14,15 +14,16 @@ body{
     font-size: 24px;
 }
 .comment{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items: baseline; */
     /* border: blue 1px solid; */
-    background-color: #e3d5ca;
+    /* background-color: #e3d5ca;
     padding: 20px 50px;
     border-radius: 25px;
     width: 90%;
-    margin: 10px auto;
+    margin: 10px auto; */
+    list-style-type: none;
 }
 .comments:hover{
     border: black 1px solid;
@@ -43,4 +44,18 @@ body{
 }
 .margin_left{
     margin-left: 20px;
+}
+.comment__kids{
+    /* border: black 1px solid; */
+}
+.comment__item{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline; 
+    /* border: blue 1px solid; */
+    background-color: #e3d5ca;
+    padding: 20px 50px;
+    border-radius: 25px;
+    width: 90%;
+    margin: 10px auto;
 }

@@ -1,31 +1,33 @@
 import { URL } from "./config.js";
 
 class Api {
-    constructor(url) {
-        this._url = url;
-    }
-
-    onResponse(res) {
-        return res.json();
-        // if (res.ok) {
-        // }
+    constructor() {
+        this._url = URL;
     }
 
     getAllNews() {
-        fetch(`${url}beststories.json?print=pretty`)
-            .then(onResponse);
+        const result = fetch(`${this._url}beststories.json?print=pretty`)
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error('Не получил список новостей');
+                }
+                return res.json();
+            })
+        return result;
     }
 
     getNewsById(itemID) {
-        fetch(`${url}item/${itemID}.json?print=pretty`)
-            .then(onResponse);
+        return fetch(`${this._url}item/${itemID}.json?print=pretty`)
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error('Не получил новость по id');
+                }
+                return res.json();
+            })
     }
-
-
 }
 
-const api = new Api(URL);
-export default api;
+export default Api;
 
 // const obj = {
 //     name: 'Вася',

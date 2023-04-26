@@ -1,5 +1,4 @@
-
-import { api } from "../utils/API"
+import Api from '../utils/API.js';
 // window.localStorage.setItem('id', 'sijducewince2ibuweidkmsi8327ry2hiec');  // Создание элемента
 // window.localStorage.removeItem('id');   // Удаление элемента
 // window.localStorage.clear();     // Очистка хранилища
@@ -7,9 +6,10 @@ import { api } from "../utils/API"
 // const id = window.localStorage.getItem('id');   // Чтение элемента
 
 const commentsList = document.querySelector(".comments__list"); // Комментарии новости
-const url = "https://hacker-news.firebaseio.com/v0/"
-const numberOfComments = 10
-const news = document.querySelector(".news__url")
+// const url = "https://hacker-news.firebaseio.com/v0/";
+const numberOfComments = 10;
+const news = document.querySelector(".news__url");
+const api = new Api();
 
 function renderComment(response) {
     // console.log('response: ', response);
@@ -36,13 +36,12 @@ function getComments() {
                         .then((res) => {
                             if (res) {
                                 const newComment = renderComment(res);
-                                if (commentsList) {
-                                    const kidsList = newComment.querySelector('.comment__kids');
-                                    commentsList.append(newComment);
-                                    getKidComments(res, kidsList);
-                                } else {
+                                if (!commentsList) {
                                     return;
                                 }
+                                const kidsList = newComment.querySelector('.comment__kids');
+                                commentsList.append(newComment);
+                                getKidComments(res, kidsList);
                             }
 
                         })

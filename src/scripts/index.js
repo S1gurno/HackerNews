@@ -1,15 +1,17 @@
-import { api } from '../utils/API';
+import Api from '../utils/API.js';
 const NewsList = document.querySelector(".main__list")
 const url = "https://hacker-news.firebaseio.com/v0/"
 const numberOfStories = 15;
 let comment;
+const api = new Api();
+
 // const button = document.querySelector(".comments__button")
 
 function getNews() {
     api.getAllNews()
         .then((res) => {
             res.slice(0, numberOfStories).map((item) => {
-                api.getNewsByID(item)
+                api.getNewsById(item)
                     .then((res) => {
                         // console.log('res: ', res);
                         const newItem = document.querySelector('template').cloneNode(true).content;
@@ -21,7 +23,7 @@ function getNews() {
                         newItem.querySelector(".comments__button").addEventListener("click", (event) => {
                             event.preventDefault();
                             window.localStorage.setItem('id', `${res.id}`);
-                            window.location.href = "./components/comments/comment.html";
+                            window.location.href = "./src/components/comments/comment.html";
                         });
 
                         NewsList.append(newItem);
@@ -42,4 +44,4 @@ function getNews() {
 }
 
 // `https://hacker-news.firebaseio.com/v0/item/${}.json?print=pretty`
-getNews()
+getNews();
